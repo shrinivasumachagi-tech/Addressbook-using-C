@@ -37,21 +37,93 @@ It supports **creating, searching, editing, deleting, and saving contacts** whil
 
 ---
 
-## 🏗️ Data Structures Used
 
-### Contacts Structure
-```c
-typedef struct
-{
-    char Name[30];
-    char Mobile_number[11];
-    char Mail_ID[30];
-} Contacts;
 
-typedef struct
-{
-    Contacts contact_details[100];
-    int contact_count;
-} AddressBook;
+#Validation Rules Implemented
+🔹 Name Validation
+
+Only alphabets allowed
+
+Spaces permitted
+
+No digits or special characters
+
+🔹 Mobile Number Validation
+
+Must start with digits 6 to 9
+
+Exactly 10 digits
+
+Numeric characters only
+
+Must be unique
+
+🔹 Email ID Validation
+
+Exactly one @ symbol
+
+Must contain .com
+
+Only lowercase letters allowed
+
+No spaces permitted
+
+Domain must appear after @
+
+Must be unique
+
+🔍 Core Functional Modules
+
+valid_name() – Validates contact name
+
+valid_phone_number() – Validates phone number
+
+valid_email_id() – Validates email ID
+
+create_contact() – Adds new contact
+
+list_contacts() – Displays all contacts
+
+search_contacts() – Searches contacts
+
+edit_contact() – Modifies contact details
+
+delete_contact() – Removes a contact
+
+save_contacts() – Saves contacts to file
+
+💾 File Handling
+
+Contacts are stored in data.txt
+
+Data stored in CSV format
+
+Uses standard C file operations:
+
+fopen()
+
+fprintf()
+
+fclose()
+
+Contacts are sorted alphabetically before saving
+
+Ensures persistent storage across executions
+
+How to Compile and Run (Linux)
+gcc main.c contact.c -o address_book
+./address_book
+
+🧪 Sample Data Format (data.txt)
+#3
+Alex,9876543210,alex@gmail.com
+John,9123456789,john@gmail.com
+Ravi,9988776655,ravi@gmail.com
+
+
+
+
+
+
 
 
